@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solo Company OS — The Operating System for One-Person AI Companies</title>
+  <meta name="description" content="A structured operating system for solo developers building with AI. Discipline, workflow, proof capture, and business operations in one place.">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --border: #262626;
+      --text: #e5e5e5;
+      --text-dim: #a3a3a3;
+      --accent: #3b82f6;
+      --accent-dim: #1d4ed8;
+      --green: #22c55e;
+      --orange: #f97316;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      padding: 80px 24px 60px;
+      text-align: center;
+      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-dim);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .hero-visual {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .hero-visual img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Section */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .gallery-item:hover { border-color: var(--accent); }
+    .gallery-item a { display: block; }
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item .caption {
+      padding: 14px 16px;
+    }
+    .gallery-item .caption h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .gallery-item .caption p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* Service cards */
+    .service-card {
+      background: var(--surface-2);
+    }
+    .service-card .price {
+      font-size: 0.8rem;
+      color: var(--green);
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    /* Roadmap */
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .roadmap::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .roadmap-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      position: relative;
+    }
+    .roadmap-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .roadmap-dot.done { background: var(--green); color: #000; }
+    .roadmap-dot.active { background: var(--accent); color: #fff; }
+    .roadmap-dot.planned { background: var(--surface-2); color: var(--text-dim); border: 1px solid var(--border); }
+    .roadmap-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .roadmap-content p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .roadmap-status {
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-top: 6px;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .status-done { background: rgba(34,197,94,0.15); color: var(--green); }
+    .status-active { background: rgba(59,130,246,0.15); color: var(--accent); }
+    .status-planned { background: rgba(163,163,163,0.1); color: var(--text-dim); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--text-dim); }
+    footer a:hover { color: var(--text); }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .hero { padding: 60px 16px 40px; }
+      .section { padding: 60px 16px; }
+      .gallery { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Solo Company OS</h1>
+    <p class="subtitle">The Operating System for One-Person AI Companies</p>
+    <div class="hero-visual">
+      <img src="assets/screenshots/20260514_172943_company_company-dashboard_v01.png" alt="Solo Company OS Dashboard" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Proof Gallery -->
+  <section class="section">
+    <h2 class="section-title">Proof of Work</h2>
+    <p class="section-desc">Real screenshots from a working one-person AI company. No mocks, no mocks.</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_172943_company_company-dashboard_v01.png" target="_blank">
+          <img src="assets/screenshots/20260514_172943_company_company-dashboard_v01.png" alt="Company Dashboard" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Company Dashboard</h3>
+          <p>Mission, active areas, and module status at a glance.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_173042_company_service-catalog_v01.png" target="_blank">
+          <img src="assets/screenshots/20260514_173042_company_service-catalog_v01.png" alt="Service Catalog" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Service Catalog</h3>
+          <p>Defined services with clear scope and deliverables.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_173046_business_offer-ladder_v01.png" target="_blank">
+          <img src="assets/screenshots/20260514_173046_business_offer-ladder_v01.png" alt="Offer Ladder" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Offer Ladder</h3>
+          <p>4-tier pricing structure from quick fix to monthly retainer.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_173213_solo-company-os_folder-structure_v01.png" target="_blank">
+          <img src="assets/screenshots/20260514_173213_solo-company-os_folder-structure_v01.png" alt="Folder Structure" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Folder Structure</h3>
+          <p>File-based operating system — no databases, no servers.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_181309_solo-company-os_os-workspace-peekaboo_v01.png" target="_blank">
+          <img src="assets/screenshots/20260514_181309_solo-company-os_os-workspace-peekaboo_v01.png" alt="Workspace View" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Workspace View</h3>
+          <p>Cockpit, workflows, templates, and proof capture in one place.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_182939_plane-homarr_plane-workspace-peekaboo_v01_redacted.png" target="_blank">
+          <img src="assets/screenshots/20260514_182939_plane-homarr_plane-workspace-peekaboo_v01_redacted.png" alt="Project Board" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Project Board</h3>
+          <p>Kanban-style task tracking with priority and status.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_184101_plane-homarr_homarr-cockpit-final_v01_redacted.png" target="_blank">
+          <img src="assets/screenshots/20260514_184101_plane-homarr_homarr-cockpit-final_v01_redacted.png" alt="Homarr Dashboard" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Operations Dashboard</h3>
+          <p>Service health, backups, and system status cards.</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <a href="assets/screenshots/20260514_180238_terminal_peekaboo-window-list_v01.png" target="_blank">
+          <img src="assets/screenshots/20260514_180238_terminal_peekaboo-window-list_v01.png" alt="Terminal Windows" loading="lazy">
+        </a>
+        <div class="caption">
+          <h3>Multi-Agent Terminal</h3>
+          <p>Parallel Claude Code sessions running simultaneously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); max-width: 100%; padding-left: 0; padding-right: 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+      <h2 class="section-title">Core Modules</h2>
+      <p class="section-desc">Seven modules that turn scattered AI work into a reliable business operation.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon" style="background: rgba(59,130,246,0.15); color: var(--accent);">C</div>
+          <h3>Cockpit</h3>
+          <p>Daily operating dashboard. Focus, blockers, and status in one view.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: rgba(168,85,247,0.15); color: #a855f7;">W</div>
+          <h3>Workflows</h3>
+          <p>Task, risk, and code review processes with enforced gates.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: rgba(34,197,94,0.15); color: var(--green);">O</div>
+          <h3>Company OS</h3>
+          <p>Business-level operating modules for mission, areas, and strategy.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: rgba(249,115,22,0.15); color: var(--orange);">B</div>
+          <h3>Business Pack</h3>
+          <p>Service packages, pricing tiers, and client intake forms.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: rgba(236,72,153,0.15); color: #ec4899;">P</div>
+          <h3>Proof Capture</h3>
+          <p>Screenshot capture, validation, and visual work documentation.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: rgba(20,184,166,0.15); color: #14b8a6;">S</div>
+          <h3>SkillHub</h3>
+          <p>Reusable skills and prompt library built from experience.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: rgba(99,102,241,0.15); color: #6366f1;">A</div>
+          <h3>Internal Agents</h3>
+          <p>Automated health checks, asset creation, and routine tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <h2 class="section-title">Service Packages</h2>
+    <p class="section-desc">What I build and deliver for clients using this operating system.</p>
+    <div class="cards">
+      <div class="card service-card">
+        <h3>AI Workflow Diagnosis</h3>
+        <p>Audit your current AI-assisted workflow. Find bottlenecks, missed tests, and token waste.</p>
+        <div class="price">Starting at $200</div>
+      </div>
+      <div class="card service-card">
+        <h3>Claude Code Workbench Setup</h3>
+        <p>Full workbench installation with hooks, agents, and discipline kernel.</p>
+        <div class="price">Starting at $500</div>
+      </div>
+      <div class="card service-card">
+        <h3>AI Product MVP Build</h3>
+        <p>From idea to working product. Backend, frontend, desktop shell, tests, and deploy.</p>
+        <div class="price">Starting at $2,000</div>
+      </div>
+      <div class="card service-card">
+        <h3>Monthly Support</h3>
+        <p>Ongoing maintenance, feature additions, and priority response.</p>
+        <div class="price">Starting at $800/mo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); max-width: 100%; padding-left: 0; padding-right: 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+      <h2 class="section-title">Roadmap</h2>
+      <p class="section-desc">What's done, what's in progress, and what's next.</p>
+      <div class="roadmap">
+        <div class="roadmap-item">
+          <div class="roadmap-dot done">1</div>
+          <div class="roadmap-content">
+            <h3>Foundation</h3>
+            <p>File-based OS structure, cockpit, workflows, templates, and gate rules.</p>
+            <span class="roadmap-status status-done">Complete</span>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot done">2</div>
+          <div class="roadmap-content">
+            <h3>Business Layer</h3>
+            <p>Service catalog, offer ladder, client intake, and pricing structure.</p>
+            <span class="roadmap-status status-done">Complete</span>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot done">3</div>
+          <div class="roadmap-content">
+            <h3>Proof System</h3>
+            <p>Screenshot capture, redaction pipeline, and public-safe showcase.</p>
+            <span class="roadmap-status status-done">Complete</span>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot active">4</div>
+          <div class="roadmap-content">
+            <h3>SkillHub & Agents</h3>
+            <p>Reusable skills library, internal agents, and automation hooks.</p>
+            <span class="roadmap-status status-active">In Progress</span>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot planned">5</div>
+          <div class="roadmap-content">
+            <h3>Client Portal</h3>
+            <p>Client-facing dashboard for project status, deliverables, and invoicing.</p>
+            <span class="roadmap-status status-planned">Planned</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built with Claude Code. Operated as a one-person company.</p>
+    <p style="margin-top: 8px;">
+      <a href="https://github.com/1lvinx/solo-company-public-showcase">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>
