@@ -8,10 +8,10 @@
 
 | Check | Status |
 |-------|--------|
-| No `10.x.x.x` in any public file | NEEDS_VERIFICATION |
-| No `192.168.x.x` in any public file | NEEDS_VERIFICATION |
-| No `172.16-31.x.x` in any public file | NEEDS_VERIFICATION |
-| No `localhost` with port numbers | NEEDS_VERIFICATION |
+| No `10.x.x.x` in any public file | VERIFIED (2026-05-19) |
+| No `192.168.x.x` in any public file | VERIFIED (2026-05-19) |
+| No `172.16-31.x.x` in any public file | VERIFIED (2026-05-19) |
+| No `localhost` with port numbers | VERIFIED (2026-05-19) |
 
 **Verification command:**
 ```bash
@@ -22,10 +22,10 @@ grep -rn "10\.\|192\.168\.\|172\.1[6-9]\.\|172\.2[0-9]\.\|172\.3[0-1]\.\|localho
 
 | Check | Status |
 |-------|--------|
-| No `http://10.` URLs | NEEDS_VERIFICATION |
-| No `http://192.168.` URLs | NEEDS_VERIFICATION |
-| No internal dashboard URLs | NEEDS_VERIFICATION |
-| No Plane/Homarr live URLs | NEEDS_VERIFICATION |
+| No `http://10.` URLs | VERIFIED (2026-05-19) |
+| No `http://192.168.` URLs | VERIFIED (2026-05-19) |
+| No internal dashboard URLs | VERIFIED (2026-05-19) |
+| No Plane/Homarr live URLs | VERIFIED (2026-05-19) |
 
 **Verification command:**
 ```bash
@@ -36,10 +36,10 @@ grep -rn "http://10\.\|http://192\.168\.\|http://localhost:" public-showcase/
 
 | Check | Status |
 |-------|--------|
-| No `/srv/` paths | NEEDS_VERIFICATION |
-| No `/Users/elvinx/` paths | NEEDS_VERIFICATION |
-| No `/Users/` home directory paths | NEEDS_VERIFICATION |
-| No SSH config paths (`~/.ssh/`) | NEEDS_VERIFICATION |
+| No `/srv/` paths | VERIFIED (2026-05-19) |
+| No `/Users/elvinx/` paths | VERIFIED (2026-05-19) |
+| No `/Users/` home directory paths | VERIFIED (2026-05-19) |
+| No SSH config paths (`~/.ssh/`) | VERIFIED (2026-05-19) |
 
 **Verification command:**
 ```bash
@@ -50,9 +50,9 @@ grep -rn "/srv/\|/Users/" public-showcase/
 
 | Check | Status |
 |-------|--------|
-| No `solo-cockpit` alias references | NEEDS_VERIFICATION |
-| No SSH key paths | NEEDS_VERIFICATION |
-| No SSH config content | NEEDS_VERIFICATION |
+| No `solo-cockpit` alias references | VERIFIED (2026-05-19) |
+| No SSH key paths | VERIFIED (2026-05-19) |
+| No SSH config content | VERIFIED (2026-05-19) |
 
 **Verification command:**
 ```bash
@@ -63,10 +63,10 @@ grep -rn "solo-cockpit\|\.ssh/\|IdentityFile" public-showcase/
 
 | Check | Status |
 |-------|--------|
-| No API key patterns | NEEDS_VERIFICATION |
-| No token strings | NEEDS_VERIFICATION |
-| No password references | NEEDS_VERIFICATION |
-| No secret file paths (`.env`) | NEEDS_VERIFICATION |
+| No API key patterns | VERIFIED (2026-05-19) |
+| No token strings | VERIFIED (2026-05-19) |
+| No password references | VERIFIED (2026-05-19) |
+| No secret file paths (`.env`) | VERIFIED (2026-05-19) |
 
 **Verification command:**
 ```bash
@@ -116,12 +116,12 @@ grep -rn "API_KEY\|TOKEN\|SECRET\|PASSWORD\|\.env\b" public-showcase/
 
 | Check | Status |
 |-------|--------|
-| No `.env` files | NEEDS_VERIFICATION |
-| No `node_modules/` | NEEDS_VERIFICATION |
-| No `__pycache__/` | NEEDS_VERIFICATION |
-| No `.DS_Store` | NEEDS_VERIFICATION |
-| No backup files (`*.bak`, `*.old`) | NEEDS_VERIFICATION |
-| No temp files (`*.tmp`) | NEEDS_VERIFICATION |
+| No `.env` files | VERIFIED (2026-05-19) |
+| No `node_modules/` | VERIFIED (2026-05-19) |
+| No `__pycache__/` | VERIFIED (2026-05-19) |
+| No `.DS_Store` | VERIFIED (2026-05-19) — added to .gitignore |
+| No backup files (`*.bak`, `*.old`) | VERIFIED (2026-05-19) |
+| No temp files (`*.tmp`) | VERIFIED (2026-05-19) |
 
 **Verification command:**
 ```bash
