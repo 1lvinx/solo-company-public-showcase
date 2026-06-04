@@ -8,7 +8,7 @@ Every service is built on proven internal workflows. We use what we sell.
 
 ---
 
-## 1. AI Workflow Diagnosis
+## 1. AI 工作流诊断与搭建 Lite
 
 **Who it's for:** Individuals or teams who use AI tools but feel scattered and unstructured.
 
@@ -18,7 +18,9 @@ Every service is built on proven internal workflows. We use what we sell.
 - Current workflow assessment
 - Tool selection and configuration
 - Workflow documentation
-- Basic automation setup
+- Lightweight workflow setup notes
+- Templates for repeated use
+- Proof of Work report
 - 1-hour walkthrough
 
 **Delivery process:**
@@ -30,7 +32,7 @@ Every service is built on proven internal workflows. We use what we sell.
 
 **Timeline:** 1-3 days
 
-**Starting price:** ¥299-999
+**Starting price:** 首批 ¥999 / 标准 ¥1,999 起
 
 **What I need from you:**
 - List of tools you currently use

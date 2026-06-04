@@ -88,7 +88,7 @@ Public-safe screenshots demonstrating the system:
 
 | Package | What You Get | Price Range |
 |---------|--------------|-------------|
-| AI Workflow Diagnosis | Current workflow assessment + optimization plan | ¥299-999 |
+| AI 工作流诊断与搭建 Lite | Current workflow diagnosis + repeatable workflow setup | 首批 ¥999 / 标准 ¥1,999 起 |
 | Claude Code Workbench Setup | Complete Claude Code configuration + rules | ¥1,999-5,999 |
 | AI Product MVP Build | Full MVP development with AI assistance | ¥8,000-30,000 |
 | Monthly Support | Ongoing optimization and maintenance | ¥1,000-5,000/mo |

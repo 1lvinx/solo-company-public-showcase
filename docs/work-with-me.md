@@ -24,14 +24,16 @@ No courses. No training. No slide decks. One thing: turning AI into productivity
 See [Service Packages](service-packages.md) for details.
 
 General ranges:
-- Diagnosis/audit: ¥499-1,999
+- AI 工作流诊断与搭建 Lite: 首批 ¥999 / 标准 ¥1,999 起
 - Knowledge base setup: ¥1,999-5,999
 - Automation MVP: ¥3,999-15,000
 - Product review: ¥999-4,999
 
 ## Contact
 
-[Add your contact method here]
+Send a short message with: "看一下我的工作流".
+
+I'll first check whether the Lite service is a fit before quoting.
 
 ## Final Note
 

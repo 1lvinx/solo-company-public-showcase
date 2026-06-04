@@ -1,19 +1,22 @@
 # Service Packages
 
-## AI Workflow Audit
+## AI 工作流诊断与搭建 Lite
 
 **For:** Individuals, creators, small teams who feel overwhelmed by AI tools.
 
-**Outcome:** A practical AI workflow diagnosis and improvement plan.
+**Outcome:** A practical AI workflow diagnosis and a repeatable working setup.
 
 **Deliverables:**
 - Current workflow map
 - Pain point analysis
 - Tool stack recommendation
-- 7-day improvement plan
+- Repeatable workflow setup notes
+- Lightweight templates
+- Proof of Work report
 - Risk and cost notes
+- 7-day WeChat Q&A support
 
-**Price:** ¥499-1,999
+**Price:** 首批 ¥999 / 标准 ¥1,999 起
 **Timeline:** 1-3 days
 
 ---
@@ -90,6 +93,6 @@
 
 ## Contact
 
-If you're unsure what you need, tell me your situation. I'll help you figure it out.
+If you're unsure what you need, send: "看一下我的工作流".
 
 Unsuitable work I'll decline directly — no hard sell.
