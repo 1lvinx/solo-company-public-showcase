@@ -1,6 +1,6 @@
 # Solo Company OS
 
-> A complete operating system for one-person AI-powered companies.
+> Public-safe preview package for a one-person AI-powered company operating system.
 
 ## What Is This?
 
@@ -29,6 +29,8 @@ AI coding tools are powerful but chaotic. Without structure, you waste tokens, l
 
 ## Current Status
 
+> Snapshot values in this repository follow `docs/runtime-status-summary.md`. This is a preview package, not a live public release.
+
 | Metric | Value |
 |--------|-------|
 | Files | 124+ |
@@ -39,7 +41,7 @@ AI coding tools are powerful but chaotic. Without structure, you waste tokens, l
 
 ## What Is Intentionally Private
 
-This is an **open showcase** of the operating system. The following are intentionally kept private:
+This preview package stays public-safe. The following remain intentionally private:
 
 - Internal IP addresses and server configurations
 - SSH credentials and access details
@@ -48,11 +50,11 @@ This is an **open showcase** of the operating system. The following are intentio
 - Private screenshots containing sensitive information
 - Live service URLs (Plane, Homarr)
 
-The public showcase demonstrates the system architecture, capabilities, and approach — not the private infrastructure.
+The public showcase demonstrates the system architecture, capabilities, and approach. Live infrastructure and private operational details stay out of scope.
 
 ## License
 
-Internal use. Not yet published.
+Internal preview. Not yet published.
 
 ---
 

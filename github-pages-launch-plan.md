@@ -1,6 +1,8 @@
 # GitHub Pages Launch Plan
 
 > Steps to publish Solo Company OS public showcase on GitHub Pages.
+>
+> Canonical current state lives in `docs/runtime-status-summary.md`. This document is a launch plan, not proof of live publication.
 
 ## Recommended Repository
 
@@ -81,7 +83,7 @@ git push -u origin main
 3. Branch: `main`, folder: `/ (root)`
 4. Save
 5. Wait 2-3 minutes for first build
-6. Visit `https://<username>.github.io/solo-company-os-showcase/`
+6. Visit `https://<username>.github.io/solo-company-os-showcase/` after the canonical source says the preview is ready to publish
 
 ### Step 4: Verify
 

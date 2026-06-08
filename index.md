@@ -1,6 +1,6 @@
 # Solo Company OS
 
-## The Operating System for One-Person AI Companies
+## Public-Safe Preview for One-Person AI Companies
 
 ---
 
@@ -15,7 +15,7 @@ AI coding tools are powerful but chaotic. Solo developers using Claude Code, Cur
 
 ## The Solution
 
-Solo Company OS provides the operating system that turns AI-assisted work into reliable business operations.
+Solo Company OS provides the operating system that turns AI-assisted work into reliable business operations. This page is a public-safe preview, and the canonical current state lives in `docs/runtime-status-summary.md`.
 
 ### Operating Gates
 
@@ -71,7 +71,7 @@ Automated agents that maintain operating discipline:
 
 ## Proof Screenshots
 
-Public-safe screenshots demonstrating the system:
+Public-safe screenshots from the current preview package:
 
 | Screenshot | What It Shows |
 |------------|---------------|
@@ -126,7 +126,7 @@ Public-safe screenshots demonstrating the system:
 
 ## Contact
 
-*Placeholder — add contact information when ready for public launch.*
+*Placeholder — add contact information if and when the preview package is ever published.*
 
 ---
 

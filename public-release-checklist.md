@@ -1,6 +1,8 @@
 # Public Release Checklist
 
-> Pre-launch safety checklist for Solo Company OS public showcase.
+> Pre-publication safety checklist for the Solo Company OS public showcase preview package.
+>
+> Canonical status source: `docs/runtime-status-summary.md`. This checklist is a gate, not a live publish claim.
 
 ## Checklist
 
@@ -156,7 +158,7 @@ find public-showcase/ -name ".env" -o -name "node_modules" -o -name "__pycache__
 
 | Outcome | Action |
 |---------|--------|
-| All checks PASS | Proceed with GitHub Pages launch |
+| All checks PASS | Proceed to the planned GitHub Pages launch |
 | Any check FAIL | Fix issue, re-verify, then launch |
 | Any check WARN | Document risk, launch with caution |
 
